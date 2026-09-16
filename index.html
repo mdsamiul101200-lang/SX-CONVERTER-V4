@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050914">
+  <title>SX CONVERTER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <main class="shell">
+    <header class="brandbar">
+      <div class="brand-mark"><span class="mark-arrow">↗</span></div>
+      <div class="brand-name">SX CONVERTER</div>
+      <div class="brand-status"><span></span> READY</div>
+    </header>
+
+    <section class="converter-card">
+      <div class="card-line"></div>
+      <div class="upload-zone" id="uploadZone">
+        <input id="fileInput" type="file" hidden>
+        <div class="upload-icon">⇧</div>
+        <div class="upload-title">FILE UPLOAD</div>
+        <div class="upload-actions">
+          <button class="btn primary" id="chooseBtn">CHOOSE FILE</button>
+          <button class="btn ghost" id="pasteBtn">PASTE</button>
+        </div>
+        <div class="drop-note">Tap to select a file or drop one here</div>
+      </div>
+
+      <div class="selected-file hidden" id="selectedFile">
+        <div class="file-icon">FILE</div>
+        <div class="file-meta">
+          <strong id="fileName">—</strong>
+          <span id="fileInfo">—</span>
+        </div>
+        <button class="remove" id="removeBtn" aria-label="Remove file">×</button>
+      </div>
+
+      <div class="paste-box hidden" id="pasteBox">
+        <textarea id="pasteArea" placeholder="Paste text or HTML content here..."></textarea>
+        <div class="paste-actions">
+          <button class="btn primary" id="usePasteBtn">USE CONTENT</button>
+          <button class="btn ghost" id="cancelPasteBtn">CANCEL</button>
+        </div>
+      </div>
+
+      <div class="format-row">
+        <label>
+          <span>INPUT FORMAT</span>
+          <select id="inputFormat"></select>
+        </label>
+        <div class="convert-symbol">⇄</div>
+        <label>
+          <span>OUTPUT FORMAT</span>
+          <select id="outputFormat"></select>
+        </label>
+      </div>
+
+      <button class="convert-btn" id="convertBtn">
+        <span id="convertLabel">CONVERT</span>
+        <span class="spinner hidden" id="spinner"></span>
+      </button>
+
+      <div class="status hidden" id="status">
+        <div class="status-title" id="statusTitle">PROCESSING</div>
+        <div class="progress"><i id="progressBar"></i></div>
+        <div class="status-detail" id="statusDetail">Preparing conversion...</div>
+      </div>
+
+      <div class="result hidden" id="result">
+        <div class="result-icon">✓</div>
+        <div class="result-title">CONVERSION COMPLETE</div>
+        <div class="result-file" id="resultFile">output</div>
+        <button class="convert-btn download" id="downloadBtn">DOWNLOAD</button>
+        <button class="again" id="againBtn">CONVERT AGAIN</button>
+      </div>
+
+      <div class="error hidden" id="error"></div>
+    </section>
+  </main>
+  <script src="/js/app.js"></script>
+</body>
+</html>

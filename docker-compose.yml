@@ -1,0 +1,18 @@
+services:
+  sx-converter:
+    build: .
+    ports:
+      - "10000:10000"
+    environment:
+      PORT: 10000
+      HOST: 0.0.0.0
+      MAX_FILE_SIZE_MB: 100
+      JOB_TIMEOUT_MS: 300000
+      DATA_DIR: /app/data
+      CORS_ORIGIN: "*"
+    volumes:
+      - sx-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  sx-data:
